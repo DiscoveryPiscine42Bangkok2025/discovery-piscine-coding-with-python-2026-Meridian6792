@@ -30,9 +30,10 @@ def checkmate(board):
         return
     #เจอ King แล้ว Check Pawn ทันที
     else:
-        if clean_rows[king_row+1][king_col-1] == "P" or clean_rows[king_row+1][king_col+1] == "P":
-            print("Success")
-            return
+        if (king_row < size):
+            if (king_col + 1 < size and king_col - 1 > 0 and clean_rows[king_row+1][king_col-1] == "P") or (king_col + 1 < size and king_col + 1 < size and clean_rows[king_row+1][king_col+1] == "P"):
+                print("Success")
+                return
 
 
     # ตรวจ Rook และ Queen (แนวตรง)
